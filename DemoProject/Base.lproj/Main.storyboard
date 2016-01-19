@@ -94,6 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kb5-XN-y2x" secondAttribute="trailing" constant="15" id="0k5-ZB-QMA"/>
                             <constraint firstItem="Kb5-XN-y2x" firstAttribute="leading" secondItem="2Jk-OV-CLi" secondAttribute="leading" id="14R-Nd-vZb"/>
                             <constraint firstItem="wHI-ef-jmx" firstAttribute="top" secondItem="Kb5-XN-y2x" secondAttribute="bottom" constant="8" id="BT5-4U-3Gl"/>
                             <constraint firstItem="wHI-ef-jmx" firstAttribute="leading" secondItem="Kb5-XN-y2x" secondAttribute="leading" id="EEe-fb-I3R"/>
@@ -104,6 +105,7 @@
                             <constraint firstItem="2Jk-OV-CLi" firstAttribute="top" secondItem="Kb5-XN-y2x" secondAttribute="bottom" constant="-273" id="g60-kK-u2S"/>
                             <constraint firstItem="2Jk-OV-CLi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="iYT-GR-tr1"/>
                             <constraint firstItem="pce-xX-ypK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qTg-DV-zqJ"/>
+                            <constraint firstItem="2Jk-OV-CLi" firstAttribute="top" secondItem="pce-xX-ypK" secondAttribute="bottom" constant="8" id="szR-5f-AXp"/>
                             <constraint firstAttribute="trailing" secondItem="2Jk-OV-CLi" secondAttribute="trailing" constant="20" id="uBS-8f-6bL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wHI-ef-jmx" secondAttribute="bottom" constant="20" id="uRJ-pg-PlD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kb5-XN-y2x" secondAttribute="trailing" constant="-5" id="xBX-Yn-hV7"/>
@@ -113,7 +115,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="L5b-o0-5ur"/>
+                                <exclude reference="g60-kK-u2S"/>
                                 <exclude reference="zga-kh-wa2"/>
+                                <exclude reference="xBX-Yn-hV7"/>
                             </mask>
                         </variation>
                     </view>

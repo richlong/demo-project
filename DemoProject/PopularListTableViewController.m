@@ -2,7 +2,7 @@
 //  PopularListTableViewController.m
 //  test
 //
-//  Created by Internet Dev on 19/01/2016.
+//  Created by Rich Long on 19/01/2016.
 //  Copyright © 2016 RL. All rights reserved.
 //
 
@@ -21,14 +21,30 @@ static NSString *singleItemSegue = @"singleItemSegue";
     
     [super viewDidLoad];
     
+    self.title = @"Popular Items";
+    
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES].labelText = @"Loading Popular Items";
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
     //Set up network connection to end point and get popular list XML.
     self.network = [[Network alloc] initWithDelegate:self];
     
+    // Initialize the refresh control.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadContent)
+                  forControlEvents:UIControlEventValueChanged];
+    
+    [self loadContent];
+}
+
+- (void)loadContent {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         //Background Thread
         [self.network getPopularList];
     });
-    
 }
 
 #pragma mark - Popular list delegate methods
@@ -42,6 +58,9 @@ static NSString *singleItemSegue = @"singleItemSegue";
         dispatch_async(dispatch_get_main_queue(), ^(void){
             //Run UI Updates once complete
             [self.tableView reloadData];
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [self.refreshControl endRefreshing];
         });
     });
 }
@@ -56,7 +75,10 @@ static NSString *singleItemSegue = @"singleItemSegue";
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
     [alertController addAction:actionOk];
-    [self presentViewController:alertController animated:YES completion:nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [self presentViewController:alertController animated:YES completion:nil];
+    });
 }
 
 #pragma mark - Table view data source

@@ -2,7 +2,7 @@
 //  PopularList.h
 //  test
 //
-//  Created by Internet Dev on 19/01/2016.
+//  Created by Rich Long on 19/01/2016.
 //  Copyright © 2016 RL. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @property (nonatomic, assign)BOOL isShortDesc;
 @property (nonatomic, assign)BOOL isTitle;
 @property (nonatomic, strong)NSMutableString *tempShortDesc;
+@property (nonatomic, strong)NSMutableString *tempTitle;
 
 - (instancetype)initWithXML:(NSData*)xml;
 

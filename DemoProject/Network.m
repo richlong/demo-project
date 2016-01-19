@@ -2,7 +2,7 @@
 //  Network.m
 //  test
 //
-//  Created by Internet Dev on 19/01/2016.
+//  Created by Rich Long on 19/01/2016.
 //  Copyright © 2016 RL. All rights reserved.
 //
 
@@ -10,8 +10,8 @@
 
 @implementation Network
 
-static NSString *baseURL = @"http:/goio.sky.com/";
-static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Application_Navigation/Sky_Movies/Most_Popular/content/promoPage.do.xml";
+static NSString *baseURL = @"http://goio.sky.com";
+static NSString *popularListURL = @"http://goio.sky.com/vod/content/Home/Application_Navigation/Sky_Movies/Most_Popular/content/promoPage.do.xml";
 
 - (instancetype)initWithDelegate:(id)delegate {
     
@@ -50,6 +50,7 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
     
     @try {
         NSURLSession *session = [NSURLSession sharedSession];
+        
         [[session  downloadTaskWithURL:[NSURL URLWithString:url]
                      completionHandler:^(NSURL * _Nullable location,
                                          NSURLResponse * _Nullable response,
@@ -73,7 +74,7 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
 }
 
 
-#pragma mark - Convinience methods
+#pragma mark - Convenience methods
 
 - (void)getPopularList {
     

@@ -2,7 +2,7 @@
 //  PopularList.m
 //  test
 //
-//  Created by Internet Dev on 19/01/2016.
+//  Created by Rich Long on 19/01/2016.
 //  Copyright © 2016 RL. All rights reserved.
 //
 
@@ -43,6 +43,7 @@ static NSString * const kTitle = @"title";
     }
     if ([elementName isEqualToString:kTitle]) {
         self.isTitle = YES;
+        self.tempTitle = [NSMutableString new];
     }
     else if ([elementName isEqualToString:kShortDesc]) {
         self.isShortDesc = YES;
@@ -56,7 +57,8 @@ static NSString * const kTitle = @"title";
     if (self.currentItem) {
     
         if (self.isTitle) {
-            self.currentItem.title = string;
+            [self.tempTitle appendString:string];
+
         }
         else if (self.isShortDesc) {
             [self.tempShortDesc appendString:string];
@@ -73,7 +75,9 @@ static NSString * const kTitle = @"title";
     }
     
     if ([elementName isEqualToString:kTitle]) {
+        self.currentItem.title = self.tempTitle;
         self.isTitle = NO;
+        self.tempTitle = nil;
     }
     else if ([elementName isEqualToString:kShortDesc]) {
         self.currentItem.shortDescription = [self.tempShortDesc copy];

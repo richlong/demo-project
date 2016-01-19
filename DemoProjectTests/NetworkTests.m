@@ -1,6 +1,6 @@
 //
-//  testTests.m
-//  testTests
+//  NetworkTests.m
+//  DemoProject
 //
 //  Created by Internet Dev on 19/01/2016.
 //  Copyright © 2016 RL. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface testTests : XCTestCase
+@interface NetworkTests : XCTestCase
 
 @end
 
-@implementation testTests
+@implementation NetworkTests
 
 - (void)setUp {
     [super setUp];

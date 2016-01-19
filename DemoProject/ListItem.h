@@ -14,11 +14,6 @@
 @property (nonatomic,copy) NSString *url;
 @property (nonatomic,copy) NSString *shortDescription;
 
-@property (nonatomic,copy) NSString *image;
-@property (nonatomic,copy) NSString *synopsis;
-@property (nonatomic,copy) NSString *broadcastChannel;
-
-
 - (instancetype)initWithTitle:(NSString*)title ShortDescription:(NSString*)shortDesc AndURL:(NSString*)url;
 
 @end

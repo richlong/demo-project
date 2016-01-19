@@ -18,6 +18,7 @@
 
 - (void)recieveSingleItem:(NSData*)xmlResponse;
 - (void)recieveSingleItemError:(long)statusCode;
+- (void)recieveImage:(NSData*)dataResponse;
 
 @end
 
@@ -31,5 +32,6 @@
 
 - (void)getPopularList;
 - (void)getSingleItem:(NSString*)url;
+- (void)getImage:(NSString*)url;
 
 @end

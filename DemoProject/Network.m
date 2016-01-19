@@ -46,6 +46,33 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
     }
 }
 
+- (void)getFileFromURL:(NSString*)url WithCompletionHandler:(void(^)(long statusCode, NSData *dataResponse))completionHandler{
+    
+    @try {
+        NSURLSession *session = [NSURLSession sharedSession];
+        [[session  downloadTaskWithURL:[NSURL URLWithString:url]
+                     completionHandler:^(NSURL * _Nullable location,
+                                         NSURLResponse * _Nullable response,
+                                         NSError * _Nullable error) {
+
+                         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+                         long responseStatusCode = [httpResponse statusCode];
+                         completionHandler(responseStatusCode,[NSData dataWithContentsOfURL:location]);
+                         
+                         if (error) {
+                             NSLog(@"error %@",error);
+                         }
+
+                     }] resume];
+
+    }
+    @catch (NSException *exception) {
+        NSLog(@"error %@",exception);
+        completionHandler(500,nil);
+    }
+}
+
+
 #pragma mark - Convinience methods
 
 - (void)getPopularList {
@@ -73,6 +100,17 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
         else {
             [self.delegate recieveSingleItemError:statusCode];
         }
+    }];
+}
+
+- (void)getImage:(NSString*)url {
+ 
+    [self getFileFromURL:url WithCompletionHandler:^(long statusCode, NSData *dataResponse) {
+        
+        if (statusCode == 200) {
+            [self.delegate recieveImage:dataResponse];
+        }
+        
     }];
 }
 

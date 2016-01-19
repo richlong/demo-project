@@ -19,7 +19,7 @@
 
     //TODO: add animation for loading
     
-    //Set up network connection to end point and get popular list XML.
+    //Set up network connection to end point
     self.network = [[Network alloc] initWithDelegate:self];
     
     //Hide UI until content loaded
@@ -54,6 +54,7 @@
         //Background Thread
         self.singleItem = [[SingleItem alloc]initWithXML:xmlResponse];
         
+        
         dispatch_async(dispatch_get_main_queue(), ^(void){
             //Run UI Updates once complete
             [self setUIElementContent];
@@ -74,11 +75,25 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void)recieveImage:(NSData *)dataResponse {
+    
+    UIImage *downloadedImage = [UIImage imageWithData: dataResponse];
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        //Run UI Updates once complete
+        [self.imageView setImage:downloadedImage];
+    });
+
+    
+}
+
 - (void)setUIElementContent {
     
     self.itemTitle.text = self.singleItem.title;
     self.broadcastChannel.text = self.singleItem.broadcastChannel;
     self.synopsis.text = self.singleItem.synopsis;
+    
+    [self.network getImage:self.singleItem.image];
     
     self.imageView.hidden = NO;
     self.itemTitle.hidden = NO;

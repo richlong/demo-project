@@ -30,18 +30,15 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
                 completionHandler:^(NSData *data,
                                     NSURLResponse *response,
                                     NSError *error) {
-                    
-                    //                NSLog(@"%@",[NSString stringWithUTF8String:[data bytes]]);
-                    
-                    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-                    long responseStatusCode = [httpResponse statusCode];
-                    completionHandler(responseStatusCode,data);
-                    
-                    if (error) {
-                        NSLog(@"error %@",error);
-                    }
-                    
-                }] resume];
+                                                        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+                                                        long responseStatusCode = [httpResponse statusCode];
+                                                        completionHandler(responseStatusCode,data);
+                                                        
+                                                        if (error) {
+                                                            NSLog(@"error %@",error);
+                                                        }
+                                                        
+                                                    }] resume];
     }
     @catch (NSException *exception) {
         NSLog(@"error %@",exception);
@@ -49,6 +46,7 @@ static NSString *popularListURL = @"http:/goio.sky.com/vod/content/Home/Applicat
     }
 }
 
+#pragma mark - Convinience methods
 
 - (void)getPopularList {
     

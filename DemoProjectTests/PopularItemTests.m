@@ -68,7 +68,6 @@
 
     self.popularList = [[PopularList alloc] initWithXML:xmlResponse];
     [self.expectation fulfill];
-
 }
 
 - (void)recievePopularListError:(long)statusCode {

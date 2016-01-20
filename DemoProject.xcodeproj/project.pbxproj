@@ -19,11 +19,8 @@
 		A2483A111C4E349000A237B1 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A101C4E349000A237B1 /* ListItem.m */; };
 		A2483A171C4E538400A237B1 /* SingleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A161C4E538400A237B1 /* SingleItem.m */; };
 		A2483A1E1C4E5BE200A237B1 /* PopularListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A1D1C4E5BE200A237B1 /* PopularListTableViewController.m */; };
-		A2483A2F1C4E7B8900A237B1 /* DemoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A2E1C4E7B8900A237B1 /* DemoProjectTests.m */; };
 		A2483A391C4E7BDD00A237B1 /* NetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A361C4E7B9D00A237B1 /* NetworkTests.m */; };
 		A2483A3D1C4F7B9000A237B1 /* PopularItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2483A3C1C4F7B9000A237B1 /* PopularItemTests.m */; };
-		A2483A3F1C4F7CFD00A237B1 /* promolist.xml in Resources */ = {isa = PBXBuildFile; fileRef = A2483A3E1C4F7CFD00A237B1 /* promolist.xml */; };
-		A2483A401C4F810B00A237B1 /* promolist.xml in Resources */ = {isa = PBXBuildFile; fileRef = A2483A3E1C4F7CFD00A237B1 /* promolist.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +57,9 @@
 		A2483A1C1C4E5BE100A237B1 /* PopularListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularListTableViewController.h; sourceTree = "<group>"; };
 		A2483A1D1C4E5BE200A237B1 /* PopularListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularListTableViewController.m; sourceTree = "<group>"; };
 		A2483A2C1C4E7B8900A237B1 /* DemoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2483A2E1C4E7B8900A237B1 /* DemoProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoProjectTests.m; sourceTree = "<group>"; };
 		A2483A301C4E7B8900A237B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2483A361C4E7B9D00A237B1 /* NetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTests.m; sourceTree = "<group>"; };
 		A2483A3C1C4F7B9000A237B1 /* PopularItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularItemTests.m; sourceTree = "<group>"; };
-		A2483A3E1C4F7CFD00A237B1 /* promolist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = promolist.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,10 +162,8 @@
 		A2483A2D1C4E7B8900A237B1 /* DemoProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				A2483A3E1C4F7CFD00A237B1 /* promolist.xml */,
 				A2483A3C1C4F7B9000A237B1 /* PopularItemTests.m */,
 				A2483A361C4E7B9D00A237B1 /* NetworkTests.m */,
-				A2483A2E1C4E7B8900A237B1 /* DemoProjectTests.m */,
 				A2483A301C4E7B8900A237B1 /* Info.plist */,
 			);
 			path = DemoProjectTests;
@@ -256,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2483A401C4F810B00A237B1 /* promolist.xml in Resources */,
 				A24839F11C4E20D800A237B1 /* LaunchScreen.storyboard in Resources */,
 				A24839EE1C4E20D800A237B1 /* Assets.xcassets in Resources */,
 				A24839EC1C4E20D800A237B1 /* Main.storyboard in Resources */,
@@ -267,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2483A3F1C4F7CFD00A237B1 /* promolist.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +287,6 @@
 			files = (
 				A2483A3D1C4F7B9000A237B1 /* PopularItemTests.m in Sources */,
 				A2483A391C4E7BDD00A237B1 /* NetworkTests.m in Sources */,
-				A2483A2F1C4E7B8900A237B1 /* DemoProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

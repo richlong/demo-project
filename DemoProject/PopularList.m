@@ -22,7 +22,7 @@ static NSString * const kTitle = @"title";
 {
     self = [super init];
     if (self) {
-        
+                
         self.listOfPopularItems = [NSMutableArray new];
 
         self.parser = [[NSXMLParser alloc] initWithData:xml];
